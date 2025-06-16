@@ -1,0 +1,141 @@
+body {
+  background-color: beige;
+  font-family: Arial, sans-serif;
+}
+.upper {
+  background-color: rgb(77, 77, 113);
+  width: 100%;
+  height: 60px;
+  font-size: 35px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: beige;
+  text-align: center;
+}
+.middle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  background-color: rgb(197, 197, 213);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.middle a {
+  width: 100%;
+  padding: 10px;
+  color: black;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  display: block;
+}
+
+.middle input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.middle button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(77, 77, 113);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.middle button:hover{
+  background-color: rgb(103, 103, 144)
+  
+
+}
+
+.user-line,
+.password-line {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.user-line input,
+.password-line input {
+  width: 100%;
+  padding-right: 30px;
+}
+
+.user-line span,
+.password-line span {
+  position: absolute;
+  top: 35%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: rgb(197, 197, 213);
+}
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  border-color: rgb(77, 77, 113);
+  outline: none;
+}
+
+.formControlWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.iconWrapper {
+  position: absolute;
+  left: 10px;
+  color: rgb(197, 197, 213);
+  font-size: 18px;
+}
+.modalButtons{
+  width: 100%;
+  background-color: rgb(77, 77, 113);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.modalButtons button:hover{
+  background-color: rgb(103, 103, 144)
+  
+
+}
+.logout {
+  color: beige;
+  font-size: 25px;
+  text-decoration: none; 
+  padding-right: 5px;
+}
+
+.logout:hover {
+  color: rgb(197, 197, 213);
+}
+.logout{
+  padding-left: 860px;
+}

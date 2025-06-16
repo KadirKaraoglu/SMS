@@ -1,0 +1,226 @@
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: beige;
+}
+
+.sidebar {
+  width: 140px;
+  background-color: rgb(77, 77, 113);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 82px;
+  font-size: 25px;
+}
+
+.menuItem {
+  width: 100%;
+  position: relative;
+}
+
+.menuItem a {
+  padding: 15px 5px;
+  text-align: center;
+  display: block;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(77, 77, 113);
+}
+
+.menuItem:hover a {
+  background-color: rgb(103, 103, 144);
+}
+.submenu {
+  display: none;
+  flex-direction: column;
+  background-color: rgb(197, 197, 213);
+  width: 100%;
+}
+
+.menuItem:hover .submenu {
+  display: flex;
+}
+
+.submenu a {
+  padding: 15px 5px;
+  background-color: rgb(197, 197, 213);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.submenu a:hover {
+  background-color: rgb(197, 197, 213);
+  color: rgb(77, 77, 113);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: rgb(77, 77, 113);
+  color: beige;
+  padding: 15px 25px;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.middle {
+  width: 96%;
+  height: 86%;
+  background-color: rgb(197, 197, 213);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.overview {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.overview h2 {
+  font-size: 40px;
+  color: rgb(77, 77, 113);
+}
+
+.overview p {
+  font-size: 20px;
+  color: rgb(77, 77, 113);
+  margin-top: 30px;
+}
+
+.imageRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.imageRow img {
+  width: 45%;
+  height: auto;
+  border: 4px solid beige;
+}
+.homeIcon {
+  color: beige;
+  font-size: 30px;
+  margin-right: 15px;
+  text-decoration: none;
+}
+.homeIcon:hover {
+  color: rgb(197, 197, 213);
+}
+.userCard {
+  margin-top: 85px;
+  background-color: white;
+  width: 50%;
+  height: 35%;
+  position: absolute;
+  text-align: left;
+  padding: 15px;
+  z-index: 1;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.Button {
+  padding: 4px 16px;
+  font-size: 16px;
+  background-color: rgb(77, 77, 113);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.Button:hover {
+  background-color: rgb(103, 103, 144);
+}
+@media (max-width: 768px) {
+  .userCard {
+    padding: 10px;
+  }
+
+  .userCard p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .userCard p {
+    font-size: 12px;
+  }
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modalContent {
+  background-color: rgb(197, 197, 213);
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.modalContent input {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 15px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalButtons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(77, 77, 113);
+  color: white;
+  cursor: pointer;
+}
+
+.modalButtons button:hover {
+  background-color: rgb(103, 103, 144);
+}
+.logout {
+  color: beige;
+  font-size: 25px;
+  text-decoration: none; 
+  padding-right: 5px;
+}
+
+.logout:hover {
+  color: rgb(197, 197, 213);
+}
+.logout{
+  padding-left: 860px;
+}
