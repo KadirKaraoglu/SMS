@@ -50,8 +50,7 @@ public class GlobalExceptionHandler {
 	 @ExceptionHandler(value = MethodArgumentNotValidException.class)
 	    public ResponseEntity<ApiError> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception, WebRequest request)
 	            throws UnknownHostException {
-	        
-	        // Tüm validasyon hatalarını alıp tek bir mesajda birleştirebiliriz
+	
 	        List<String> errors = new ArrayList<>();
 	        for (ObjectError error : exception.getBindingResult().getAllErrors()) {
 	            if (error instanceof FieldError) {
@@ -62,25 +61,22 @@ public class GlobalExceptionHandler {
 	            }
 	        }
 	        
-	        // Hata mesajlarını virgülle ayırarak tek bir string yapın
+	       
 	        String errorMessage = String.join("; ", errors);
 	        if (errorMessage.isEmpty()) {
 	            errorMessage = "Validation failed.";
 	        }
 	        
-	        // createApiError metodunu kullanarak ApiError objesi oluşturun
 	        return ResponseEntity.badRequest().body(createApiError(errorMessage, request));
 	    }
 
-	    // YENİ HALİ: HttpMessageNotReadableException'ı ApiError formatında döndürüyoruz
 	    @ExceptionHandler(HttpMessageNotReadableException.class)
 	    public ResponseEntity<ApiError> handleInvalidFormat(HttpMessageNotReadableException ex, WebRequest request)
 	            throws UnknownHostException {
-	        // Hata mesajınızı ErrorMessage enum'unuzdan veya sabit bir stringden alabilirsiniz
-	        // Örneğin: String message = MessageType.INVALID_DATE_FORMAT.getMessage(); (eğer böyle bir enum'unuz varsa)
+	       
 	        String message = "Invalid data format. Please check the date format (e.g., MM/dd/yyyy).";
 	        
-	        // createApiError metodunu kullanarak ApiError objesi oluşturun
+	        
 	        return ResponseEntity.badRequest().body(createApiError(message, request));
 	    }
 }
