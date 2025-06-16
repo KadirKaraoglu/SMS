@@ -36,4 +36,39 @@ public class GlobalExceptionHandler {
 		return apiError;
 	}
 
+@ExceptionHandler(value = MethodArgumentNotValidException.class)
+	    public ResponseEntity<ApiError> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception, WebRequest request)
+	            throws UnknownHostException {
+	        
+	        
+	        List<String> errors = new ArrayList<>();
+	        for (ObjectError error : exception.getBindingResult().getAllErrors()) {
+	            if (error instanceof FieldError) {
+	                FieldError fieldError = (FieldError) error;
+	                errors.add(fieldError.getField() + ": " + fieldError.getDefaultMessage());
+	            } else {
+	                errors.add(error.getDefaultMessage());
+	            }
+	        }
+	        
+	        
+	        String errorMessage = String.join("; ", errors);
+	        if (errorMessage.isEmpty()) {
+	            errorMessage = "Validation failed.";
+	        }
+	        
+	       
+	        return ResponseEntity.badRequest().body(createApiError(errorMessage, request));
+	    }
+
+	    
+	    @ExceptionHandler(HttpMessageNotReadableException.class)
+	    public ResponseEntity<ApiError> handleInvalidFormat(HttpMessageNotReadableException ex, WebRequest request)
+	            throws UnknownHostException {
+	        
+	        String message = "Invalid data format. Please check the date format (e.g., MM/dd/yyyy).";
+	        
+	       
+	        return ResponseEntity.badRequest().body(createApiError(message, request));
+	    }
 }
